@@ -1,0 +1,25 @@
+go.toolsのblogを使ってみた
+12 Jun 2014
+Tags: Go, Golang, Blog Engine, go.tools, Present
+
+Takafumi Tsuchida
+@manji0112
+
+* イントロダクション
+
+.play ./20140612/hello.go
+
+Goで手頃なBlog Engineないかなーと探していたところ、標準でgo.toolsにblogが入っていました。
+
+これは、[[http://blog.golang.org]]で使われているのと同じものです。
+
+go.tools/presentと同じ簡易記法で記事が書けるみたいですね。
+
+Presentはちょっと前から使っていて、シンプルな記法が気に入っていたのでblogも使ってみることにしました。
+
+* セットアップ
+
+下記を参考に環境を用意しました。といっても、go.blog repositoryをcloneしてきて少し改編しただけ...。
+
+.link http://blog.toshnix.com/goblog
+

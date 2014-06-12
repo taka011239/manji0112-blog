@@ -1,0 +1,44 @@
+// Copyright 2013 The Go Authors.  All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+// Command blog is a web server for the Go blog that can run on App Engine or
+// as a stand-alone HTTP server.
+package main
+
+import (
+	"net/http"
+	"strings"
+	"time"
+
+	"code.google.com/p/go.tools/blog"
+	"code.google.com/p/go.tools/godoc/static"
+
+	_ "code.google.com/p/go.tools/playground"
+)
+
+const hostname = "blog.takafumi.tsuchida.name" // default hostname for blog server
+
+var config = blog.Config{
+	Hostname:     hostname,
+	BaseURL:      "http://" + hostname,
+	GodocURL:     "",
+	HomeArticles: 5,  // articles to display on the home page
+	FeedArticles: 10, // articles to include in Atom and JSON feeds
+	PlayEnabled:  true,
+	FeedTitle:    "manji0112's Blog",
+}
+
+func init() {
+	http.Handle("/lib/godoc/", http.StripPrefix("/lib/godoc/", http.HandlerFunc(staticHandler)))
+}
+
+func staticHandler(w http.ResponseWriter, r *http.Request) {
+	name := r.URL.Path
+	b, ok := static.Files[name]
+	if !ok {
+		http.NotFound(w, r)
+		return
+	}
+	http.ServeContent(w, r, name, time.Time{}, strings.NewReader(b))
+}
