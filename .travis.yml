@@ -5,7 +5,7 @@ go:
 
 after_success:
 - cd
-- wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.6.zip
+- wget https://storage.googleapis.com/appengine-sdks/featured/go_google_appengine_1.9.6.zip
 - unzip -q google_appengine_1.9.6.zip
 - google_appengine/appcfg.py -v --oauth2_refresh_token=$TOKEN update $TRAVIS_BUILD_DIR
 
@@ -19,3 +19,4 @@ notifications:
 env:
   global:
     secure: fE8tKlnPNnYrR7qfHaDxBwfcxxhB8rcoPoIzEZ1iR/KIHR0vmCqcGn8ouVB2nFHeirW6h7p2E89x/RyQkHHuKdnAvmLAzGrCGbhbcCut1kAhEnCUhH7Wzzq3r+p4/6afC7usJ0GavgeGRnfYAmxm0Oy6TZ3PyI9Vh+Ks1RA+CCE=
+
