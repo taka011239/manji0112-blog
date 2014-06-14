@@ -5,11 +5,10 @@ go:
 
 after_success:
 - pwd
-- cd ..
-- ls /home/travis/gopath/src/code.google.com/p/go.tools/
+- cd
 - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.6.zip
 - unzip -q google_appengine_1.9.6.zip
-- google_appengine/appcfg.py --oauth2_refresh_token=$TOKEN update manji0112-blog
+- google_appengine/appcfg.py --oauth2_refresh_token=$TOKEN update $TRAVIS_BUILD_DIR/manji0112-blog
 
 notifications:
   hipchat:
