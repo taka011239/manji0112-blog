@@ -1,22 +1,17 @@
 language: go
-
 go:
 - go1.2.2
-
 after_success:
 - cd ..
-- ls
 - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.6.zip
 - unzip -q google_appengine_1.9.6.zip
-- google_appengine/appcfg.py -q --oauth2_refresh_token=$TOKEN update manji-0112
-
+- google_appengine/appcfg.py --oauth2_refresh_token=$TOKEN update manji0112-blog
 notifications:
   hipchat:
     rooms:
-      secure: PBXQ4RXO63HAuy1QROhN/QZDqNgX0t8T3jhGyLBRjTDIzcHnPRscNUBAb2xOVgTlBJsEx/gPxWATN3fETcZaYsOCkOWO6LuBCWHIWwkKPYLq0Qmf9OZH+PMhkS+q417ENHJIDaoOcMBm5SrKzRD15Y4qLhu/O8Ebpw3llYamEcQ=
+      secure: IB5jRa+2uFDEg2CjFqJu5EWU/Khfr7/PyShujklRTlFGcfGCvCd+BBo+vI58BMxG1fPnlnUy7hxBSv3rf5z87ouwF2MGlGvuoWYGAwDs3KZkWlqur+iqGgzXvxRaQuPmdvufiuA0xyhg9lXyW/adqBHlNrJ6rtGyoAPn0vox9wM=
     template:
     - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
-
 env:
   global:
     secure: fE8tKlnPNnYrR7qfHaDxBwfcxxhB8rcoPoIzEZ1iR/KIHR0vmCqcGn8ouVB2nFHeirW6h7p2E89x/RyQkHHuKdnAvmLAzGrCGbhbcCut1kAhEnCUhH7Wzzq3r+p4/6afC7usJ0GavgeGRnfYAmxm0Oy6TZ3PyI9Vh+Ks1RA+CCE=
