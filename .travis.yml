@@ -4,6 +4,8 @@ go:
 - go1.2.2
 
 after_success:
+- GOPATH="/home/travis/gopath"
+- ls $GOPATH/src/code.google.com/p/go.tools/
 - pwd
 - cd
 - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.6.zip
