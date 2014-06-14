@@ -1,21 +1,22 @@
 language: go
 
 go:
- - go1.2.2
+- go1.2.2
 
 after_success:
- - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.6.zip
- - unzip -q google_appengine_1.9.6.zip
- - google_appengine/appcfg.py -q --oauth2_refresh_token=$TOKEN update ./
+- cd ..
+- ls
+- wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.6.zip
+- unzip -q google_appengine_1.9.6.zip
+- google_appengine/appcfg.py -q --oauth2_refresh_token=$TOKEN update manji-0112
 
 notifications:
- hipchat:
-  rooms:
-   - secure: "LMOJ34p5+E9a5iGJWpJMF93gln0r0unIC8Erm762fqmk9aQmwoyzzuV+z9ovfdzK9DOPi8k3FRsW0ERxZxB+WMdX6x3UYHV0K/Vd1b33Xt6D11tJ+xr8erMNhHMdh3l2G4QB2EnHi0tflffbAjhBzVR4csO+whvqvtR68fDInpw="
-  template:
-   - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
+  hipchat:
+    rooms:
+      secure: PBXQ4RXO63HAuy1QROhN/QZDqNgX0t8T3jhGyLBRjTDIzcHnPRscNUBAb2xOVgTlBJsEx/gPxWATN3fETcZaYsOCkOWO6LuBCWHIWwkKPYLq0Qmf9OZH+PMhkS+q417ENHJIDaoOcMBm5SrKzRD15Y4qLhu/O8Ebpw3llYamEcQ=
+    template:
+    - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
 
 env:
- global:
-  secure: "fE8tKlnPNnYrR7qfHaDxBwfcxxhB8rcoPoIzEZ1iR/KIHR0vmCqcGn8ouVB2nFHeirW6h7p2E89x/RyQkHHuKdnAvmLAzGrCGbhbcCut1kAhEnCUhH7Wzzq3r+p4/6afC7usJ0GavgeGRnfYAmxm0Oy6TZ3PyI9Vh+Ks1RA+CCE="
-
+  global:
+    secure: fE8tKlnPNnYrR7qfHaDxBwfcxxhB8rcoPoIzEZ1iR/KIHR0vmCqcGn8ouVB2nFHeirW6h7p2E89x/RyQkHHuKdnAvmLAzGrCGbhbcCut1kAhEnCUhH7Wzzq3r+p4/6afC7usJ0GavgeGRnfYAmxm0Oy6TZ3PyI9Vh+Ks1RA+CCE=
