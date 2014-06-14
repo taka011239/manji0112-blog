@@ -4,13 +4,10 @@ go:
 - go1.2.2
 
 after_success:
-- GOPATH="/home/travis/gopath"
-- ls $GOPATH/src/code.google.com/p/go.tools/
-- pwd
 - cd
 - wget https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.6.zip
 - unzip -q google_appengine_1.9.6.zip
-- google_appengine/appcfg.py --oauth2_refresh_token=$TOKEN update $TRAVIS_BUILD_DIR
+- google_appengine/appcfg.py -v --oauth2_refresh_token=$TOKEN update $TRAVIS_BUILD_DIR
 
 notifications:
   hipchat:
