@@ -1,0 +1,22 @@
+language: go
+
+go:
+- go1.2.2
+
+after_success:
+- cd
+- wget https://storage.googleapis.com/appengine-sdks/featured/go_appengine_sdk_linux_amd64-1.9.6.zip
+- unzip -q go_appengine_sdk_linux_amd64-1.9.6.zip
+- go_appengine/appcfg.py --oauth2_refresh_token=$TOKEN update $TRAVIS_BUILD_DIR
+
+notifications:
+  hipchat:
+    rooms:
+      secure: IB5jRa+2uFDEg2CjFqJu5EWU/Khfr7/PyShujklRTlFGcfGCvCd+BBo+vI58BMxG1fPnlnUy7hxBSv3rf5z87ouwF2MGlGvuoWYGAwDs3KZkWlqur+iqGgzXvxRaQuPmdvufiuA0xyhg9lXyW/adqBHlNrJ6rtGyoAPn0vox9wM=
+    template:
+    - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}'
+
+env:
+  global:
+    secure: fE8tKlnPNnYrR7qfHaDxBwfcxxhB8rcoPoIzEZ1iR/KIHR0vmCqcGn8ouVB2nFHeirW6h7p2E89x/RyQkHHuKdnAvmLAzGrCGbhbcCut1kAhEnCUhH7Wzzq3r+p4/6afC7usJ0GavgeGRnfYAmxm0Oy6TZ3PyI9Vh+Ks1RA+CCE=
+

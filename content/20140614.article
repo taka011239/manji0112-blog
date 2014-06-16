@@ -1,0 +1,41 @@
+Go ApplicationをTravisCIからGAEにデプロイする
+14 Jun 2014
+Tags: Go, Golang, App Engine, go.tools
+
+Takafumi Tsuchida
+@manji0112
+
+* TravisCI to GAE
+
+TravisCIからGAEにデプロイするには、.travis.ymlでGoogle App SDK for GoをDownloadすればいい。
+
+Go用のSDKであるgo_appengine_sdk_linux_amd64-1.9.6.zipを使用するので注意する。
+
+間違えに気づかず、2時間近く詰まってしまった...。
+
+* GAEにDeployするときの認証
+
+2段階認証している場合、application用にパスワードを発行するかOAuthで認証するか2通りの方法がある。
+
+2段階認証していなければ、mailアドレスとパスワードで問題ない。
+
+いちいちパスワードを発行するのも面倒なので、今回はOAuthで認証する方法を選択した。
+
+.code ./20140614/getgaetoken
+
+上記コマンドを実行すると、homeディレクトリに.appcfg_oauth2_tokensファイルができる。
+
+中身はjson形式になっているので、refresh_tokenキーの値をコピーする。
+
+コピーした値は、travisコマンドで暗号化して.travis.ymlに書き出す。
+
+.code ./20140614/travisencrypt
+
+後は、after_successでappcfg.pyでdeployを実行すればいい。
+
+goappコマンドはパッと見た感じ、oauth2_refresh_tokenオプション無さそう...
+
+最終的にできる.travis.ymlはこんな感じになる。
+
+.code ./20140614/.travis.yml
+
