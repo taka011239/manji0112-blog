@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.10'
+install:
+- sudo apt-get update -qq
+- sudo apt-get install libexpat1-dev
+- sudo apt-get install libicu-dev
+deploy:
+  provider: heroku
+  api_key:
+    secure: QJQKTd5epSUk81cYsuksoUJzxFp0Xs2li6OeqfAgoVjcFtWrGbEp/s/ErU/JV2b373VZxWCZAZilH71em6lFjJITrsu2BrsmNt98gC4jcHlwMY0qzRso2MqiqVjTNRLGsplH1JbYKtjKZJVLZH6wOItFlgL88FGcNnm8lOW0cUg=
+  app: damp-castle-2298
+  on:
+    repo: taka011239/manji0112_bot
+

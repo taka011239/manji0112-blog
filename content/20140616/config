@@ -1,0 +1,6 @@
+heroku addons:add redistogo:nano
+heroku ps:scale web=1
+heroku config:add HEROKU_URL=xxxx
+heroku config:add HUBOT_HIPCHAT_JID=xxxx
+heroku config:add HUBOT_HIPCHAT_PASSWORD=xxxx
+heroku config:add HUBOT_HIPCHAT_ROOM=xxxx

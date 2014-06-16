@@ -1,0 +1,44 @@
+HubotをHerokuにdeploy
+16 Jun 2014
+Tags: Heroku, Hubot, HipChat
+
+Takafumi Tsuchida
+@manji0112
+
+* Hubot on Heroku
+
+備忘録として、手順をまとめておく。
+
+以下のリンク先を参考にした。
+
+.link http://tech-sketch.jp/2013/12/hubot-install-heroku.html
+
+* Hubotのインストール
+
+npmでHubotをインストールして、herokuでアプリケーションを作成する。
+
+.code ./20140616/prepare
+
+* Travis CI連携
+
+travisコマンドでheroku用の設定を行う。
+
+.code ./20140616/integration
+
+* Hipchat連携
+
+Hipchatと連携させたかったので、apt-getで依存packageをインストールする設定を追加した。
+
+最終的に.travis.ymlはこんな感じになった。
+
+.code ./20140616/.travis.yml
+
+* デプロイ完了後に
+
+Herokuにデプロイされた後に、Hipchat用の設定を行う。
+
+.code ./20140616/config
+
+これもCIに組み込みたかったが、`deploy:`の`run:`で実行したら、
+encryptionしたTokenがTravis CIのLogから丸見えになってしまった。
+
