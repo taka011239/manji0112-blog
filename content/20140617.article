@@ -1,0 +1,19 @@
+go.toolsのblogを使ってみた
+12 Jun 2014
+Tags: Bash, Mac, Homebrew
+
+Takafumi Tsuchida
+@manji0112
+
+* Mac OS X Defaultのbash
+
+OS Xのbashは2.0系なので、標準出力と標準エラー出力を追記形式でリダイレクトできなくてツラい。
+
+http://qiita.com/r_plus/items/41fb31285fb64fb4be85
+
+* bashのupdate
+
+Homebrewで簡単にUpdateできる。
+
+http://buddylindsey.com/upgrade-bash-to-4-on-os-x/
+
