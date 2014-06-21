@@ -1,0 +1,20 @@
+Go support for Androidについてのメモ
+21 Jun 2014
+Tags: Go, Golang
+
+Takafumi Tsuchida
+@manji0112
+
+* メモ
+
+.link https://docs.google.com/document/d/1N3XyVkAP8nmWjASz8L_OjjnjVKxgeVBjIsTr5qIUcA4/preview?sle=true Go suport for Android
+
+- GoでAndroid Platformをサポートする。
+- Android Platform上で動作するGameの開発にフォーカスする。
+- GoでNDK相当の機能をサポートする。
+- GOOS=androidを指定して、Dalvik VMで読み込みできる`.so`ファイルを生成する。
+- go.mobileレポジトリを用意する。
+
+* 感想
+
+NDKだけじゃなく、GoでAndroid App書けるようになるといいな
