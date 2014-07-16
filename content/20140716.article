@@ -1,0 +1,22 @@
+TravisCIのビルド結果をHipChatに通知する
+16 Jul 2014
+Tags: TravisCI, HipChat
+
+Takafumi Tsuchida
+@manji0112
+
+* いつも忘れるので、自分用にメモ
+
+- HipChatのAPI Tokenは、[[https://www.hipchat.com/admin/api][ここ]]から確認する。
+
+- チャットルーム名は、[[https://www.hipchat.com/rooms/ids][ここ]]から確認する。
+
+- API Tokenは、travisコマンドで暗号化を忘れずに。
+
+.code ./20140716/travis
+
+- Notificationのメッセージは、[[http://docs.travis-ci.com/user/notifications/#HipChat-notification][ここ]]を参考にカスタマイズ
+
+* 参考
+
+.link http://blog.ruedap.com/2013/09/12/travis-ci-hipchat-notifications
