@@ -1,0 +1,14 @@
+UbuntuにOracle JDKをInstall
+02 Aug 2014
+Tags: Java, ubuntu
+
+Takafumi Tsuchida
+@manji0112
+
+* memo
+
+.code ./20140802/install
+
+* 参考
+
+.link https://launchpad.net/~webupd8team/+archive/ubuntu/java
