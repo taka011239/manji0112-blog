@@ -1,0 +1,23 @@
+Eclipse(LUNA) + ADTで環境構築するときの注意(2014/08/12現在)
+12 Aug 2014
+Tags: Eclipsei, Android 
+
+Takafumi Tsuchida
+@manji0112
+
+* problem
+
+Eclipse(LUNA)にADTをインスコして環境構築したが、新規にAndroid Application Projectを作ったときにActivity(.java)何かの自動生成されるものができない。
+
+調べてみると、issueが上がっていた。
+どうも、ADTがOracle JDK SE 7でうまく動かないらしい。
+
+.link https://code.google.com/p/android/issues/detail?id=68755
+
+
+* workaround
+
+Eclipseを起動するVMを、Apple Java SE 6に変更すると動作するようになります。
+Eclipse(LUNA)はjava1.7以上じゃないと動かないので、keplerにダウングレードした...
+
+.link https://code.google.com/p/android/issues/detail?id=68755#c18
