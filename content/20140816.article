@@ -1,0 +1,34 @@
+homebrew caskを使う
+16 Aug 2014
+Tags: osx, homebrew 
+
+Takafumi Tsuchida
+@manji0112
+
+* brew cask?
+
+homebrewを拡張して、OSXのアプリケーションをbrew経由で管理できる
+
+.link http://caskroom.io
+
+* how to install
+
+これだけ。
+
+```
+$ brew install caskroom/cask/brew-cask
+```
+
+# how to use
+
+brewするときに`cask`を指定する
+
+```
+$ brew cask install virtualbox
+```
+
+# その他
+
+`brew bundle`でまとめて管理できると思ったら、bundleがoutdatedになっていたなど。
+
+.link http://unasuke.com/info/2014/brewfile-is-outdated/
