@@ -1,0 +1,16 @@
+Android Emulatorからlocalhostにアクセスする
+28 Aug 2014
+Tags: Eclipsei, Android 
+
+Takafumi Tsuchida
+@manji0112
+
+* From Android Emulator to localhost
+
+Android EmulatorからホストPC上で動作するTEST用Webサーバにアクセスする際に、
+アホなことにlocalhostと書いてしまっていた。
+localhostを指定した場合、当然これはAndroid Emulator自身を指す。
+
+* 正解
+
+EmulatorからホストPCにアクセスする場合は、10.0.2.2を指定する。
