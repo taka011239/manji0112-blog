@@ -1,0 +1,18 @@
+Mac OS XでScreen shotを撮るには
+4 Dec 2014
+Tags: OSX
+
+Takafumi Tsuchida
+@manji0112
+
+* Screen shotを取得する方法
+
+毎度調べてるので、忘れないようにメモ。
+
+「command + shift + 3」で画面全体をキャプチャできる。
+
+Screen shotはDesktopに保存される。
+
+さらに、「command + shift + 4」でキャプチャ範囲を指定できる。
+
+.link http://support.apple.com/ja-jp/HT5775
